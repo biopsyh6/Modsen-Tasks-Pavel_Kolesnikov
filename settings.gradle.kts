@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Modsen-Tasks-Pavel-Kolesnikov"
 include(":app")
- 
+include(":data")
+include(":domain")
