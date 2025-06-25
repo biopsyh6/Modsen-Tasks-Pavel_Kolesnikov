@@ -1,5 +1,6 @@
 [versions]
 agp = "8.8.0"
+converterGson = "2.9.0"
 koinAndroid = "3.3.0"
 koinAndroidxCompose = "3.3.0"
 koinAndroidxNavigation = "3.3.0"
@@ -17,10 +18,12 @@ material = "1.12.0"
 jetbrainsKotlinJvm = "2.0.0"
 navigationRuntimeAndroid = "2.9.0"
 navigationComposeJvmstubs = "2.9.0"
+retrofit = "2.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 insert-koin-koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinCoreVersion" }
 insert-koin-koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinCoreVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -43,6 +46,7 @@ koin-androidx-navigation = { module = "io.insert-koin:koin-androidx-navigation",
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-navigation-runtime-android = { group = "androidx.navigation", name = "navigation-runtime-android", version.ref = "navigationRuntimeAndroid" }
 androidx-navigation-compose-jvmstubs = { group = "androidx.navigation", name = "navigation-compose-jvmstubs", version.ref = "navigationComposeJvmstubs" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

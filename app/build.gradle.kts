@@ -66,6 +66,11 @@ dependencies {
 //    implementation(libs.androidx.navigation.compose.jvmstubs)
 
 
+    // retrofit
+    implementation (libs.retrofit)
+    // gson converter
+    implementation (libs.converter.gson)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
