@@ -34,6 +34,7 @@ fun TaskListScreen(
             .onEach { event ->
                 when (event.task) {
                     "Login Screen" -> navController.navigate("login")
+                    "Posts Screen" -> navController.navigate("posts")
                     // add more tasks
                 }
             }

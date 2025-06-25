@@ -15,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.modsen_tasks_pavel_kolesnikov.ui.screens.LoginScreen
+import com.example.modsen_tasks_pavel_kolesnikov.ui.screens.PostsScreen
 import com.example.modsen_tasks_pavel_kolesnikov.ui.screens.SuccessScreen
 import com.example.modsen_tasks_pavel_kolesnikov.ui.screens.TaskListScreen
 import com.example.modsen_tasks_pavel_kolesnikov.ui.theme.ModsenTasksPavelKolesnikovTheme
@@ -44,6 +45,7 @@ fun Main() {
         composable("task_list") { TaskListScreen(navController) }
         composable("login") { LoginScreen(navController) }
         composable("success") { SuccessScreen() }
+        composable("posts") { PostsScreen(navController) }
     }
 }
 
