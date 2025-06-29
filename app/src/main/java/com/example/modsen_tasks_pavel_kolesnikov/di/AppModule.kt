@@ -1,5 +1,7 @@
 package com.example.modsen_tasks_pavel_kolesnikov.di
 
+import com.example.modsen_tasks_pavel_kolesnikov.ui.model.PostUIModel
+import com.example.modsen_tasks_pavel_kolesnikov.ui.viewmodel.CommentsViewModel
 import com.example.modsen_tasks_pavel_kolesnikov.ui.viewmodel.LoginViewModel
 import com.example.modsen_tasks_pavel_kolesnikov.ui.viewmodel.PostsViewModel
 import com.example.modsen_tasks_pavel_kolesnikov.ui.viewmodel.TaskListViewModel
@@ -10,4 +12,7 @@ val appModule = module {
     viewModel<LoginViewModel> { LoginViewModel(loginUseCase = get()) }
     viewModel<TaskListViewModel> { TaskListViewModel() }
     viewModel<PostsViewModel> { PostsViewModel(getPostsUseCase = get()) }
+    viewModel<CommentsViewModel> { (savedStateHandle: androidx.lifecycle.SavedStateHandle) ->
+        CommentsViewModel(getCommentsUseCase = get(), savedStateHandle = savedStateHandle)
+    }
 }

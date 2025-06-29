@@ -1,5 +1,8 @@
 package com.example.modsen_tasks_pavel_kolesnikov.ui.model
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class PostUIModel(
     val id: Int,
     val title: String,

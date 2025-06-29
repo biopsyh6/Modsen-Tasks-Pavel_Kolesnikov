@@ -35,6 +35,8 @@ fun TaskListScreen(
                 when (event.task) {
                     "Login Screen" -> navController.navigate("login")
                     "Posts Screen" -> navController.navigate("posts")
+                    "Posts Comments Screen" -> navController.navigate("postsComments")
+                    "Comments Screen" -> navController.navigate("comments/1")
                     // add more tasks
                 }
             }

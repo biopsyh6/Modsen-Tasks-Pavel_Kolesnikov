@@ -33,20 +33,33 @@ class PostsViewModel(
             is PostsIntent.LoadPosts -> {
                 _state.update { it.copy(uiModel = it.uiModel.copy(isLoading = true)) }
                 viewModelScope.launch {
-                    when(val result = getPostsUseCase()) {
+                    when (val result = getPostsUseCase()) {
                         is TResult.Error -> {
                             val errorMessage = result.exception.parseToString()
                             _state.update {
-                                it.copy(uiModel = it.uiModel.copy(isLoading = false, error = errorMessage))
+                                it.copy(
+                                    uiModel = it.uiModel.copy(
+                                        posts = emptyList(),
+                                        isLoading = false,
+                                        error = errorMessage
+                                    )
+                                )
                             }
                             _event.emit(PostsEvent.ShowError(errorMessage))
                         }
+
                         is TResult.Success -> {
                             val uiPosts = result.data.map { post ->
                                 PostUIModel(id = post.id, title = post.title, body = post.body)
                             }
                             _state.update {
-                                it.copy(uiModel = it.uiModel.copy(posts = uiPosts, isLoading = false, error = null))
+                                it.copy(
+                                    uiModel = it.uiModel.copy(
+                                        posts = uiPosts,
+                                        isLoading = false,
+                                        error = null
+                                    )
+                                )
                             }
                         }
                     }

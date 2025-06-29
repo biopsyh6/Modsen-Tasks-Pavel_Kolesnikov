@@ -1,10 +1,13 @@
 package com.example.modsen_tasks_pavel_kolesnikov.di
 
 import com.example.data.api.PostsApi
+import com.example.data.repository.CommentsRepositoryImpl
 import com.example.data.repository.LoginRepositoryImpl
 import com.example.data.repository.PostsRepositoryImpl
+import com.example.data.source.CommentsDataSource
 import com.example.data.source.LoginDataSource
 import com.example.data.source.PostsDataSource
+import com.example.domain.repository.ICommentsRepository
 import com.example.domain.repository.ILoginRepository
 import com.example.domain.repository.IPostsRepository
 import com.google.gson.Gson
@@ -31,4 +34,7 @@ val dataModule = module {
     single { PostsDataSource(api = get()) }
     single<IPostsRepository> { PostsRepositoryImpl(dataSource = get()) }
 
+
+    single { CommentsDataSource(api = get()) }
+    single<ICommentsRepository> { CommentsRepositoryImpl(dataSource = get()) }
 }
